@@ -14,5 +14,6 @@ int main()
         std::cout << str << std::endl;
     }
 
+    std::string str1;
     return 0;
 }
