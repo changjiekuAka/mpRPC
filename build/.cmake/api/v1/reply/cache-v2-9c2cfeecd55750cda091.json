@@ -771,7 +771,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "1"
+			"value" : "2"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -851,7 +851,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "main"
+			"value" : "mprpc"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1171,6 +1171,30 @@
 		},
 		{
 			"name" : "main_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/kuaka/mpRPC"
+		},
+		{
+			"name" : "mprpc_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/kuaka/mpRPC/build"
+		},
+		{
+			"name" : "mprpc_SOURCE_DIR",
 			"properties" : 
 			[
 				{

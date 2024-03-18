@@ -6,12 +6,26 @@
 			[
 				{
 					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.0"
 					},
 					"projectIndex" : 0,
 					"source" : "."
+				},
+				{
+					"build" : "src",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
 				}
 			],
 			"name" : "Debug",
@@ -20,9 +34,10 @@
 				{
 					"directoryIndexes" : 
 					[
-						0
+						0,
+						1
 					],
-					"name" : "main"
+					"name" : "mprpc"
 				}
 			],
 			"targets" : []
