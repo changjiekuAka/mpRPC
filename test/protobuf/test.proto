@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package fixbug;
 
+option cc_generic_services = true;
+
 message ResultCode
 {
     int32 errcode = 1;
@@ -41,4 +43,10 @@ message GetFriendListsResponse
 {
     ResultCode Result = 1;
     repeated user friend_list = 2;
+}
+
+service UserServiceRpc
+{
+    rpc Login(LoginRequest) returns(LoginResponse);
+    rpc GetFriendLists(GetFriendListsRequest) returns(GetFriendListsResponse);
 }
