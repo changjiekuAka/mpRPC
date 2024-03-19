@@ -346,13 +346,20 @@ class LoginRequest :
   std::string* _internal_mutable_name();
   public:
 
-  // int32 pwd = 2;
+  // string pwd = 2;
   void clear_pwd();
-  ::PROTOBUF_NAMESPACE_ID::int32 pwd() const;
-  void set_pwd(::PROTOBUF_NAMESPACE_ID::int32 value);
+  const std::string& pwd() const;
+  void set_pwd(const std::string& value);
+  void set_pwd(std::string&& value);
+  void set_pwd(const char* value);
+  void set_pwd(const char* value, size_t size);
+  std::string* mutable_pwd();
+  std::string* release_pwd();
+  void set_allocated_pwd(std::string* pwd);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_pwd() const;
-  void _internal_set_pwd(::PROTOBUF_NAMESPACE_ID::int32 value);
+  const std::string& _internal_pwd() const;
+  void _internal_set_pwd(const std::string& value);
+  std::string* _internal_mutable_pwd();
   public:
 
   // @@protoc_insertion_point(class_scope:fixbug.LoginRequest)
@@ -361,7 +368,7 @@ class LoginRequest :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::int32 pwd_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pwd_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_user_2eproto;
 };
@@ -724,24 +731,64 @@ inline void LoginRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:fixbug.LoginRequest.name)
 }
 
-// int32 pwd = 2;
+// string pwd = 2;
 inline void LoginRequest::clear_pwd() {
-  pwd_ = 0;
+  pwd_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 LoginRequest::_internal_pwd() const {
-  return pwd_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 LoginRequest::pwd() const {
+inline const std::string& LoginRequest::pwd() const {
   // @@protoc_insertion_point(field_get:fixbug.LoginRequest.pwd)
   return _internal_pwd();
 }
-inline void LoginRequest::_internal_set_pwd(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  pwd_ = value;
-}
-inline void LoginRequest::set_pwd(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void LoginRequest::set_pwd(const std::string& value) {
   _internal_set_pwd(value);
   // @@protoc_insertion_point(field_set:fixbug.LoginRequest.pwd)
+}
+inline std::string* LoginRequest::mutable_pwd() {
+  // @@protoc_insertion_point(field_mutable:fixbug.LoginRequest.pwd)
+  return _internal_mutable_pwd();
+}
+inline const std::string& LoginRequest::_internal_pwd() const {
+  return pwd_.GetNoArena();
+}
+inline void LoginRequest::_internal_set_pwd(const std::string& value) {
+  
+  pwd_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void LoginRequest::set_pwd(std::string&& value) {
+  
+  pwd_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:fixbug.LoginRequest.pwd)
+}
+inline void LoginRequest::set_pwd(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pwd_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:fixbug.LoginRequest.pwd)
+}
+inline void LoginRequest::set_pwd(const char* value, size_t size) {
+  
+  pwd_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:fixbug.LoginRequest.pwd)
+}
+inline std::string* LoginRequest::_internal_mutable_pwd() {
+  
+  return pwd_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* LoginRequest::release_pwd() {
+  // @@protoc_insertion_point(field_release:fixbug.LoginRequest.pwd)
+  
+  return pwd_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void LoginRequest::set_allocated_pwd(std::string* pwd) {
+  if (pwd != nullptr) {
+    
+  } else {
+    
+  }
+  pwd_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pwd);
+  // @@protoc_insertion_point(field_set_allocated:fixbug.LoginRequest.pwd)
 }
 
 // -------------------------------------------------------------------

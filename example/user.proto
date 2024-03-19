@@ -13,7 +13,7 @@ message ResultCode
 message LoginRequest
 {
     string name = 1;
-    int32 pwd = 2;
+    string pwd = 2;
 }
 
 message LoginResponse
