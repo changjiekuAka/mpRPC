@@ -18,14 +18,32 @@
 					"source" : "."
 				},
 				{
-					"build" : "src",
+					"build" : "example",
+					"childIndexes" : 
+					[
+						2
+					],
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.0"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 0,
-					"source" : "src"
+					"source" : "example"
+				},
+				{
+					"build" : "example/callee",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "example/callee",
+					"targetIndexes" : 
+					[
+						0
+					]
 				}
 			],
 			"name" : "Debug",
@@ -35,12 +53,26 @@
 					"directoryIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					],
-					"name" : "mprpc"
+					"name" : "mprpc",
+					"targetIndexes" : 
+					[
+						0
+					]
 				}
 			],
-			"targets" : []
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "provider::@493cd8b262c97a98b12b",
+					"jsonFile" : "target-provider-Debug-28718d07da02dee2ad93.json",
+					"name" : "provider",
+					"projectIndex" : 0
+				}
+			]
 		}
 	],
 	"kind" : "codemodel",
