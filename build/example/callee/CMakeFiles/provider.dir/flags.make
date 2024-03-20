@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/kuaka/mpRPC/src -I/home/kuaka/mpRPC/example 
+CXX_INCLUDES = -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example 
 
