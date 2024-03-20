@@ -39,6 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+  include("/home/kuaka/mpRPC/build/src/cmake_install.cmake")
   include("/home/kuaka/mpRPC/build/example/cmake_install.cmake")
 
 endif()

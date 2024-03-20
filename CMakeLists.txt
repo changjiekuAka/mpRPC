@@ -7,7 +7,7 @@ project(mprpc)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 #设置库文件的输出路径
-set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 #设置头文件搜索路径
 include_directories(${PROJECT_SOURCE_DIR}/src/include)
@@ -16,5 +16,5 @@ include_directories(${PROJECT_SOURCE_DIR}/example)
 #设置项目库文件的搜索路径
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 
-#add_subdirectory(src)
+add_subdirectory(src)
 add_subdirectory(example)

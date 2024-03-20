@@ -1,5 +1,8 @@
 /home/kuaka/mpRPC/build/CMakeFiles/rebuild_cache.dir
 /home/kuaka/mpRPC/build/CMakeFiles/edit_cache.dir
+/home/kuaka/mpRPC/build/src/CMakeFiles/rebuild_cache.dir
+/home/kuaka/mpRPC/build/src/CMakeFiles/edit_cache.dir
+/home/kuaka/mpRPC/build/src/CMakeFiles/mprpc.dir
 /home/kuaka/mpRPC/build/example/CMakeFiles/rebuild_cache.dir
 /home/kuaka/mpRPC/build/example/CMakeFiles/edit_cache.dir
 /home/kuaka/mpRPC/build/example/callee/CMakeFiles/edit_cache.dir

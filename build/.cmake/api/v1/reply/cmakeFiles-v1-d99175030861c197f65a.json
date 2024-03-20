@@ -132,6 +132,9 @@
 			"path" : "/usr/share/cmake3/Modules/CMakeCommonLanguageInclude.cmake"
 		},
 		{
+			"path" : "src/CMakeLists.txt"
+		},
+		{
 			"path" : "example/CMakeLists.txt"
 		},
 		{

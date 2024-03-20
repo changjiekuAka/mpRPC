@@ -4,10 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kuaka/mpRPC/example/user.pb.cc" "/home/kuaka/mpRPC/build/example/callee/CMakeFiles/provider.dir/__/user.pb.cc.o"
-  "/home/kuaka/mpRPC/example/callee/userservice.cc" "/home/kuaka/mpRPC/build/example/callee/CMakeFiles/provider.dir/userservice.cc.o"
+  "/home/kuaka/mpRPC/src/mprpcapplication.cc" "/home/kuaka/mpRPC/build/src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o"
+  "/home/kuaka/mpRPC/src/rpcprovider.cc" "/home/kuaka/mpRPC/build/src/CMakeFiles/mprpc.dir/rpcprovider.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "mprpc_EXPORTS"
+  )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
@@ -17,7 +22,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/kuaka/mpRPC/build/src/CMakeFiles/mprpc.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

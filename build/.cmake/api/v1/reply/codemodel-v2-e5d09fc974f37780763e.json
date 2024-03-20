@@ -8,7 +8,8 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1
+						1,
+						2
 					],
 					"minimumCMakeVersion" : 
 					{
@@ -18,10 +19,24 @@
 					"source" : "."
 				},
 				{
+					"build" : "src",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
 					"build" : "example",
 					"childIndexes" : 
 					[
-						2
+						3
 					],
 					"minimumCMakeVersion" : 
 					{
@@ -37,12 +52,12 @@
 					{
 						"string" : "3.0"
 					},
-					"parentIndex" : 1,
+					"parentIndex" : 2,
 					"projectIndex" : 0,
 					"source" : "example/callee",
 					"targetIndexes" : 
 					[
-						0
+						1
 					]
 				}
 			],
@@ -54,21 +69,30 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					],
 					"name" : "mprpc",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 2,
+					"directoryIndex" : 1,
+					"id" : "mprpc::@145eef247bfb46b6828c",
+					"jsonFile" : "target-mprpc-Debug-7c2fbf0875db67f5813c.json",
+					"name" : "mprpc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
 					"id" : "provider::@493cd8b262c97a98b12b",
-					"jsonFile" : "target-provider-Debug-2c27c353e00d8f9f39e4.json",
+					"jsonFile" : "target-provider-Debug-36042332f1fff2e562c1.json",
 					"name" : "provider",
 					"projectIndex" : 0
 				}
