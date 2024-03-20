@@ -25,8 +25,24 @@ public:
                        ::fixbug::LoginResponse* response,
                        ::google::protobuf::Closure* done)
     {
+        /*
+        注意这里，数据以字节流的形式传输，此时request指针已经是由Protobuf帮我们进行反序列化后的数据类型
+        好处：我们无需关心数据的序列化和反序列化，Protobuf已经帮我们做好了
+        */
         std::string name = request->name();
         std::string pwd = request->pwd();
+
+        //编写本地业务
+        bool login_result = Login(name,pwd);
+
+        //编写响应 
+        fixbug::ResultCode* result = response->mutable_result();
+        result->set_errcode(0);
+        result->set_errmsg("");
+        response->set_success(login_result);
+        
+        //执行回调
+        done->Run();
     }
 };
 
