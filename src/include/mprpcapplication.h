@@ -7,12 +7,9 @@ private:
     mprpcapplication(mprpcapplication&&) = delete;
     mprpcapplication() {}
 public:
-    mprpcapplication(int argc,char** argv);
-    static mprpcapplication& GetInstance()
-    {
-        static mprpcapplication ins;
-        return ins;
-    }
+    static void Init(int argc,char** argv);
+    static mprpcapplication& GetInstance();
+   
 };
 
 
