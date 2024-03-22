@@ -42,6 +42,12 @@ void mprpcapplication::Init(int argc,char** argv)
     }
     // 加载配置文件
     m_config.LoadConfigFile(config_file.c_str());
+
+    std::cout << m_config.Load("rpcservicesIP") << std::endl;
+    std::cout << m_config.Load("rpcservicesPort") << std::endl;
+    std::cout << m_config.Load("ZookeekeperIP") << std::endl;
+    std::cout << m_config.Load("ZookeekeperPort") << std::endl;
+
 }
 
 mprpcapplication& mprpcapplication::GetInstance()

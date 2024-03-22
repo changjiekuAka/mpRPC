@@ -6,22 +6,10 @@
 
 #IncludeRegexTransform: 
 
-../src/include/mprpcapplication.h
-mprpcconfig.h
-../src/include/mprpcconfig.h
-
 ../src/include/mprpcconfig.h
 string
 -
 unordered_map
--
-
-/home/kuaka/mpRPC/src/mprpcapplication.cc
-mprpcapplication.h
-/home/kuaka/mpRPC/src/mprpcapplication.h
-iostream
--
-unistd.h
 -
 
 /home/kuaka/mpRPC/src/mprpcconfig.cc
