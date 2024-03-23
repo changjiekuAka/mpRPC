@@ -32,7 +32,14 @@ void MprpcConfig::LoadConfigFile(const char *filename)
         std::string key = src_buf.substr(0, idx);
         Trim(key);
 
-        std::string value = src_buf.substr(idx + 1, src_buf.size() - idx - 1);
+        std::string value;
+        int idx_end = src_buf.find('\n');
+        if(idx_end != -1)
+        {
+            value = src_buf.substr(idx + 1, src_buf.size() - idx - 2);
+        }else{
+            value = src_buf.substr(idx + 1, src_buf.size() - idx - 1);
+        }
         Trim(value);
 
         m_configMap.insert({key, value});
@@ -41,6 +48,7 @@ void MprpcConfig::LoadConfigFile(const char *filename)
 
 std::string MprpcConfig::Load(const std::string &key)
 {
+    // 这里不能使用[]，使用后会往map里面插入不必要的数据
     auto it = m_configMap.find(key);
     if (it == m_configMap.end())
     {
