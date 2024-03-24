@@ -1,5 +1,7 @@
 #pragma once
 #include "google/protobuf/service.h"
+#include <memory>
+#include <muduo/net/TcpServer.h>
 
 // 框架提供的发布Rpc服务的网络对象类
 class RpcProvider
