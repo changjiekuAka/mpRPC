@@ -12,7 +12,7 @@ void MprpcConfig::LoadConfigFile(const char *filename)
         char buffer[512];
         fgets(buffer, 512, fp);
 
-        // 去前空格字符
+        // 去前后空格字符
         std::string src_buf(buffer);
 
         Trim(src_buf);
@@ -59,6 +59,7 @@ std::string MprpcConfig::Load(const std::string &key)
 
 void MprpcConfig::Trim(std::string &src_buf)
 {
+    // 去前空格字符
     int idx = src_buf.find_first_not_of(' ');
     if (idx != -1)
     {
