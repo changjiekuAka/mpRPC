@@ -223,6 +223,9 @@ main_SOURCE_DIR:STATIC=/home/kuaka/mpRPC
 //Value Computed by CMake
 mprpc_BINARY_DIR:STATIC=/home/kuaka/mpRPC/build
 
+//Dependencies for the target
+mprpc_LIB_DEPENDS:STATIC=general;mudo;
+
 //Value Computed by CMake
 mprpc_SOURCE_DIR:STATIC=/home/kuaka/mpRPC
 

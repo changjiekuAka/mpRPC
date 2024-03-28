@@ -12,6 +12,7 @@
 		[
 			"add_library",
 			"link_directories",
+			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
@@ -41,12 +42,18 @@
 			},
 			{
 				"command" : 2,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
 				"file" : 1,
 				"line" : 15,
 				"parent" : 2
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 1,
 				"line" : 16,
 				"parent" : 2
@@ -71,11 +78,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "/home/kuaka/mpRPC/src/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/home/kuaka/mpRPC/example"
 				}
 			],
@@ -101,6 +108,15 @@
 				"backtrace" : 3,
 				"fragment" : "-L/home/kuaka/mpRPC/lib",
 				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/kuaka/mpRPC/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-lmudo",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"

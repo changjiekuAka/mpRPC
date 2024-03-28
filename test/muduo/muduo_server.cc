@@ -58,6 +58,7 @@ private:
             std::cout << conn->peerAddress().toIpPort() << conn->localAddress().toIpPort() << "state on" <<endl;
         }else{
             std::cout << conn->peerAddress().toIpPort() << conn->localAddress().toIpPort() << "state faile" << endl;
+            conn->shutdown();
         }
     }
 
@@ -65,9 +66,23 @@ private:
                    Buffer *buffer,
                    Timestamp time)
     {
-        
+        std::string buf = buffer->retrieveAllAsString();
+        std::cout << "recv data :" << buf << std::endl;
+        conn->send(buf);
     }
 
     TcpServer _server;
     EventLoop *_loop;
 };
+
+int main()
+{
+    EventLoop loop;
+
+    InetAddress addr("127.0.0.1",8080);
+    ChatServer server(&loop,addr,"ChatServer");
+
+    server.start();
+    loop.loop();
+    
+}

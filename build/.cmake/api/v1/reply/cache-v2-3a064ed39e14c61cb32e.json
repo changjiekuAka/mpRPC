@@ -1194,6 +1194,18 @@
 			"value" : "/home/kuaka/mpRPC/build"
 		},
 		{
+			"name" : "mprpc_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;mudo;"
+		},
+		{
 			"name" : "mprpc_SOURCE_DIR",
 			"properties" : 
 			[

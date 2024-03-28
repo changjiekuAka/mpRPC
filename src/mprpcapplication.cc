@@ -55,3 +55,8 @@ mprpcapplication& mprpcapplication::GetInstance()
     static mprpcapplication ins;
     return ins;
 }
+
+MprpcConfig& mprpcapplication::GetConfig()
+{
+    return m_config;
+}

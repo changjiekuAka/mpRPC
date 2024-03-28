@@ -9,6 +9,7 @@ private:
     mprpcapplication() {}
     static MprpcConfig m_config;
 public:
+    static MprpcConfig& GetConfig();
     static void Init(int argc,char** argv);
     static mprpcapplication& GetInstance();
    
