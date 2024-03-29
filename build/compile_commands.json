@@ -1,17 +1,17 @@
 [
 {
   "directory": "/home/kuaka/mpRPC/build/src",
-  "command": "/usr/bin/g++  -Dmprpc_EXPORTS -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g -fPIC   -o CMakeFiles/mprpc.dir/mprpcapplication.cc.o -c /home/kuaka/mpRPC/src/mprpcapplication.cc",
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/mprpc.dir/mprpcapplication.cc.o -c /home/kuaka/mpRPC/src/mprpcapplication.cc",
   "file": "/home/kuaka/mpRPC/src/mprpcapplication.cc"
 },
 {
   "directory": "/home/kuaka/mpRPC/build/src",
-  "command": "/usr/bin/g++  -Dmprpc_EXPORTS -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g -fPIC   -o CMakeFiles/mprpc.dir/mprpcconfig.cc.o -c /home/kuaka/mpRPC/src/mprpcconfig.cc",
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/mprpc.dir/mprpcconfig.cc.o -c /home/kuaka/mpRPC/src/mprpcconfig.cc",
   "file": "/home/kuaka/mpRPC/src/mprpcconfig.cc"
 },
 {
   "directory": "/home/kuaka/mpRPC/build/src",
-  "command": "/usr/bin/g++  -Dmprpc_EXPORTS -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g -fPIC   -o CMakeFiles/mprpc.dir/rpcprovider.cc.o -c /home/kuaka/mpRPC/src/rpcprovider.cc",
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/mprpc.dir/rpcprovider.cc.o -c /home/kuaka/mpRPC/src/rpcprovider.cc",
   "file": "/home/kuaka/mpRPC/src/rpcprovider.cc"
 },
 {

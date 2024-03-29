@@ -1,1 +1,1 @@
-/usr/bin/g++  -g  -rdynamic CMakeFiles/provider.dir/userservice.cc.o CMakeFiles/provider.dir/__/user.pb.cc.o  -o ../../../bin/provider   -L/home/kuaka/mpRPC/lib  -Wl,-rpath,/home/kuaka/mpRPC/lib ../../../lib/libmprpc.so -lprotobuf -lmudo 
+/usr/bin/g++  -g  -rdynamic CMakeFiles/provider.dir/userservice.cc.o CMakeFiles/provider.dir/__/user.pb.cc.o  -o ../../../bin/provider   -L/home/kuaka/mpRPC/lib  -Wl,-rpath,/home/kuaka/mpRPC/lib ../../../lib/libmprpc.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread 

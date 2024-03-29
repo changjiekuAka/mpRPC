@@ -59,6 +59,16 @@ unordered_map
 ../src/include/rpcprovider.h
 google/protobuf/service.h
 ../src/include/google/protobuf/service.h
+memory
+-
+muduo/net/TcpServer.h
+-
+muduo/net/EventLoop.h
+-
+muduo/net/InetAddress.h
+-
+muduo/net/TcpConnection.h
+-
 
 /home/kuaka/mpRPC/example/callee/userservice.cc
 iostream

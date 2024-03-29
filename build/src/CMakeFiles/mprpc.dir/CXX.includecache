@@ -6,13 +6,37 @@
 
 #IncludeRegexTransform: 
 
+../src/include/mprpcapplication.h
+mprpcconfig.h
+../src/include/mprpcconfig.h
+
 ../src/include/mprpcconfig.h
 string
 -
 unordered_map
 -
 
-/home/kuaka/mpRPC/src/mprpcconfig.cc
-mprpcconfig.h
-/home/kuaka/mpRPC/src/mprpcconfig.h
+../src/include/rpcprovider.h
+google/protobuf/service.h
+../src/include/google/protobuf/service.h
+memory
+-
+muduo/net/TcpServer.h
+-
+muduo/net/EventLoop.h
+-
+muduo/net/InetAddress.h
+-
+muduo/net/TcpConnection.h
+-
+
+/home/kuaka/mpRPC/src/rpcprovider.cc
+rpcprovider.h
+/home/kuaka/mpRPC/src/rpcprovider.h
+mprpcapplication.h
+/home/kuaka/mpRPC/src/mprpcapplication.h
+functional
+-
+string
+-
 
