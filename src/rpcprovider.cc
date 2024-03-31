@@ -50,12 +50,15 @@ void RpcProvider::Run()
 
 void RpcProvider::OnConnection(const muduo::net::TcpConnectionPtr& conn)
 {
-
+    if(!conn->connected())
+    {
+        conn->shutdown();
+    }
 }
 
 void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
                             muduo::net::Buffer* buffer,
                             muduo::Timestamp time)
-                            {
-
-                            }
+{
+    
+}

@@ -6,6 +6,7 @@
 #include <muduo/net/InetAddress.h>
 #include <muduo/net/TcpConnection.h>
 #include "google/protobuf/descriptor.h"
+#include "rpcheader.pb.h"
 #include <functional>
 #include <string>
 #include <unordered_map>
@@ -25,7 +26,7 @@ private:
     // 组织服务对象和服务中所有的方法对象
     struct ServiceInfo
     {
-        google::protobuf::Service *m_service; // 报错服务对象
+        google::protobuf::Service *m_service; // 服务对象
         std::unordered_map<std::string,const google::protobuf::MethodDescriptor*> m_methodMap;
     };
     // 一个provider节点中有多个服务，组织各个服务名称和服务
