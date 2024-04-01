@@ -60,5 +60,54 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
                             muduo::net::Buffer* buffer,
                             muduo::Timestamp time)
 {
+    // 网络上接收的远程rpc调用请求的字节流数据
+    std::string recv_buf = buffer->retrieveAllAsString(); 
+    //获取字节流数据中header_size
+    uint32_t header_size;
+    recv_buf.copy((char*)&header_size,4,0);
+    // 根据header_size得到header_str，并进行反序列化
+
+    std::string rpc_header_str = recv_buf.substr(4,header_size);
+    mprpc::RpcHeader rpc_header;
     
+    std::string service_name;
+    std::string method_name;
+    uint32_t args_size;
+
+    if(rpc_header.ParseFromString(rpc_header_str))
+    {
+        // 数据头反序列化成功
+        service_name = rpc_header.service_name();
+        method_name = rpc_header.method_name();
+        args_size =  rpc_header.args_size();
+    }
+    else
+    {
+        // 数据头反序列化失败
+        std::cout << "rpc_header Parse false" << std::endl;
+        return; 
+    }
+
+    std::string args = rpc_header_str.substr(4 + header_size,args_size);
+    
+    // 打印调试信息
+    std::cout << "===============================" << std::endl;
+    std::cout << "rpc service name : " << service_name << std::endl;
+    std::cout << "rpc method name : " << method_name << std::endl;
+    std::cout << "rpc args : " << args << std::endl;
+    std::cout << "===============================" << std::endl;
+
+    auto service_it = m_serviceMap.find(service_name);
+    if(service_it == m_serviceMap.end()){
+        std::cout << "[error] service name no find " << std::endl;
+        return;
+    }
+
+    auto method_it = service_it->second.m_methodMap.find(method_name);
+    if(method_it == service_it->second.m_methodMap.end()){
+        std::cout << "[error] method name no find " << std::endl;
+    }
+
+    google::protobuf::Service *service_ptr = service_it->second.m_service;
+    const google::protobuf::MethodDescriptor* method_ptr = method_it->second;   
 }

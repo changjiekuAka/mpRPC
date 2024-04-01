@@ -8,5 +8,6 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o
  ../example/user.pb.h
  ../src/include/mprpcapplication.h
  ../src/include/mprpcconfig.h
+ ../src/include/rpcheader.pb.h
  ../src/include/rpcprovider.h
  /home/kuaka/mpRPC/example/callee/userservice.cc

@@ -8,6 +8,9 @@ src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o
 src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o
  ../src/include/mprpcconfig.h
  /home/kuaka/mpRPC/src/mprpcconfig.cc
+src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o
+ ../src/include/rpcheader.pb.h
+ /home/kuaka/mpRPC/src/rpcheader.pb.cc
 src/CMakeFiles/mprpc.dir/rpcprovider.cc.o
  ../src/include/mprpcapplication.h
  ../src/include/mprpcconfig.h
