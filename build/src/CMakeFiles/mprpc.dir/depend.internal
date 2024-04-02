@@ -14,5 +14,6 @@ src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o
 src/CMakeFiles/mprpc.dir/rpcprovider.cc.o
  ../src/include/mprpcapplication.h
  ../src/include/mprpcconfig.h
+ ../src/include/rpcheader.pb.h
  ../src/include/rpcprovider.h
  /home/kuaka/mpRPC/src/rpcprovider.cc

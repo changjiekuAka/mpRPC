@@ -39,4 +39,7 @@ private:
     void OnMessage(const muduo::net::TcpConnectionPtr& conn,
                             muduo::net::Buffer* buffer,
                             muduo::Timestamp time);
+
+    void SendRpcProvider(const muduo::net::TcpConnectionPtr& conn,google::protobuf::Message *response);
+
 };

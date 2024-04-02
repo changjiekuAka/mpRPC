@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+../src/include/mprpcapplication.h
+mprpcconfig.h
+../src/include/mprpcconfig.h
+
+../src/include/mprpcconfig.h
+string
+-
+unordered_map
+-
+
 ../src/include/rpcheader.pb.h
 limits
 -
@@ -44,27 +54,33 @@ google/protobuf/port_def.inc
 google/protobuf/port_undef.inc
 -
 
-/home/kuaka/mpRPC/src/rpcheader.pb.cc
-rpcheader.pb.h
-/home/kuaka/mpRPC/src/rpcheader.pb.h
-algorithm
+../src/include/rpcprovider.h
+google/protobuf/service.h
+../src/include/google/protobuf/service.h
+memory
 -
-google/protobuf/io/coded_stream.h
+muduo/net/TcpServer.h
 -
-google/protobuf/extension_set.h
+muduo/net/EventLoop.h
 -
-google/protobuf/wire_format_lite.h
+muduo/net/InetAddress.h
+-
+muduo/net/TcpConnection.h
 -
 google/protobuf/descriptor.h
+../src/include/google/protobuf/descriptor.h
+rpcheader.pb.h
+../src/include/rpcheader.pb.h
+functional
 -
-google/protobuf/generated_message_reflection.h
+string
 -
-google/protobuf/reflection_ops.h
+unordered_map
 -
-google/protobuf/wire_format.h
--
-google/protobuf/port_def.inc
--
-google/protobuf/port_undef.inc
--
+
+/home/kuaka/mpRPC/src/rpcprovider.cc
+rpcprovider.h
+/home/kuaka/mpRPC/src/rpcprovider.h
+mprpcapplication.h
+/home/kuaka/mpRPC/src/mprpcapplication.h
 
