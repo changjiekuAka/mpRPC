@@ -16,7 +16,7 @@ void RpcProvider::NotifyService(::google::protobuf::Service* service)
     int method_count = pserviceDesc->method_count();
 
     std::cout << service_name << std::endl;
-
+    // 登记映射关系表
     for(int i = 0;i < method_count;++i)
     {
         const google::protobuf::MethodDescriptor *pmethodDesc = pserviceDesc->method(i);
@@ -28,7 +28,7 @@ void RpcProvider::NotifyService(::google::protobuf::Service* service)
     }
     m_serviceMap.insert({service_name , service_info});
 }
-
+// 为provider节点建立网络服务，注册事件回调
 void RpcProvider::Run()
 {
     std::string ip = mprpcapplication::GetInstance().GetConfig().Load("rpcservicesIP");
@@ -37,7 +37,7 @@ void RpcProvider::Run()
     
     // 组合TcpServer对象
     muduo::net::TcpServer tcpserver(&_eventloop,inetaddress,"rpcprovider");
-    // 注册用户连接创捷回调
+    // 注册用户连接创建回调
     tcpserver.setConnectionCallback(std::bind(&RpcProvider::OnConnection,this,_1));
     // 注册用户用户读写事件回调
     tcpserver.setMessageCallback(std::bind(&RpcProvider::OnMessage,this,_1,_2,_3));

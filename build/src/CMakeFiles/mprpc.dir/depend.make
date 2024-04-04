@@ -5,6 +5,9 @@ src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o: ../src/include/mprpcapplication.
 src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o: ../src/include/mprpcconfig.h
 src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o: ../src/mprpcapplication.cc
 
+src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../src/include/mprpcchannel.h
+src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../src/mprpcchannel.cc
+
 src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o: ../src/include/mprpcconfig.h
 src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o: ../src/mprpcconfig.cc
 

@@ -10,6 +10,10 @@
 mprpcconfig.h
 ../src/include/mprpcconfig.h
 
+../src/include/mprpcchannel.h
+google/protobuf/service.h
+-
+
 ../src/include/mprpcconfig.h
 string
 -
@@ -77,6 +81,10 @@ string
 -
 unordered_map
 -
+
+/home/kuaka/mpRPC/src/mprpcchannel.cc
+mprpcchannel.h
+/home/kuaka/mpRPC/src/mprpcchannel.h
 
 /home/kuaka/mpRPC/src/rpcprovider.cc
 rpcprovider.h

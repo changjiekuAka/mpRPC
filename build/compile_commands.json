@@ -6,6 +6,11 @@
 },
 {
   "directory": "/home/kuaka/mpRPC/build/src",
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/mprpc.dir/mprpcchannel.cc.o -c /home/kuaka/mpRPC/src/mprpcchannel.cc",
+  "file": "/home/kuaka/mpRPC/src/mprpcchannel.cc"
+},
+{
+  "directory": "/home/kuaka/mpRPC/build/src",
   "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/mprpc.dir/mprpcconfig.cc.o -c /home/kuaka/mpRPC/src/mprpcconfig.cc",
   "file": "/home/kuaka/mpRPC/src/mprpcconfig.cc"
 },
