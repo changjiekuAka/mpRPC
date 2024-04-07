@@ -3,7 +3,7 @@
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/message.h>
 
-class RpcChannel : google::protobuf::RpcChannel
+class mpRpcChannel : public google::protobuf::RpcChannel
 {
 public:
     // 所有通过Stub代理对象调用得Rpc方法，都会走到这里，统一做rpc方法得数据序列化和发送

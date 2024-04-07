@@ -15,6 +15,7 @@ public:
     {
         std::cout << "doing Local Service: Login" << std::endl;
         std::cout << name << " " << pwd << std::endl;
+        return true;
     }
 
     /*
@@ -40,7 +41,7 @@ public:
         //编写响应 
         fixbug::ResultCode* result = response->mutable_result();
         result->set_errcode(0);
-        result->set_errmsg("");
+        result->set_errmsg("888");
         response->set_success(login_result);
         
         //执行回调

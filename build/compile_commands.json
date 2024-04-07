@@ -33,5 +33,15 @@
   "directory": "/home/kuaka/mpRPC/build/example/callee",
   "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/provider.dir/__/user.pb.cc.o -c /home/kuaka/mpRPC/example/user.pb.cc",
   "file": "/home/kuaka/mpRPC/example/user.pb.cc"
+},
+{
+  "directory": "/home/kuaka/mpRPC/build/example/caller",
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/consumer.dir/calluserservice.cc.o -c /home/kuaka/mpRPC/example/caller/calluserservice.cc",
+  "file": "/home/kuaka/mpRPC/example/caller/calluserservice.cc"
+},
+{
+  "directory": "/home/kuaka/mpRPC/build/example/caller",
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/consumer.dir/__/user.pb.cc.o -c /home/kuaka/mpRPC/example/user.pb.cc",
+  "file": "/home/kuaka/mpRPC/example/user.pb.cc"
 }
 ]
