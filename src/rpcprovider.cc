@@ -95,7 +95,7 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
         return; 
     }
 
-    // 参数信息，进行反序列化 [debug] : 从rpc_header_str提取 
+    // 参数信息，进行反序列化  [debug] : 从rpc_header_str提取 
     std::string args_str = recv_buf.substr(4 + header_size,args_size);
     
     // 打印调试信息
@@ -122,7 +122,7 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
     google::protobuf::Service *service_ptr = serviceinfo_it->second.m_service;
     const google::protobuf::MethodDescriptor* method_ptr = method_it->second;   
     
-    // 生成Rpc方法调用需要的Request和Response参数
+    // 根据请求服务对象和方法描述生成Rpc方法调用需要的Request和Response参数
     google::protobuf::Message *request = service_ptr->GetRequestPrototype(method_ptr).New();
     
     if(!request->ParseFromString(args_str)){
