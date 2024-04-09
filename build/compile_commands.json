@@ -26,22 +26,22 @@
 },
 {
   "directory": "/home/kuaka/mpRPC/build/example/callee",
-  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/provider.dir/userservice.cc.o -c /home/kuaka/mpRPC/example/callee/userservice.cc",
-  "file": "/home/kuaka/mpRPC/example/callee/userservice.cc"
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/provider.dir/friendservice.cc.o -c /home/kuaka/mpRPC/example/callee/friendservice.cc",
+  "file": "/home/kuaka/mpRPC/example/callee/friendservice.cc"
 },
 {
   "directory": "/home/kuaka/mpRPC/build/example/callee",
-  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/provider.dir/__/user.pb.cc.o -c /home/kuaka/mpRPC/example/user.pb.cc",
-  "file": "/home/kuaka/mpRPC/example/user.pb.cc"
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/provider.dir/__/friends.pb.cc.o -c /home/kuaka/mpRPC/example/friends.pb.cc",
+  "file": "/home/kuaka/mpRPC/example/friends.pb.cc"
 },
 {
   "directory": "/home/kuaka/mpRPC/build/example/caller",
-  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/consumer.dir/calluserservice.cc.o -c /home/kuaka/mpRPC/example/caller/calluserservice.cc",
-  "file": "/home/kuaka/mpRPC/example/caller/calluserservice.cc"
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/consumer.dir/callfriendservice.cc.o -c /home/kuaka/mpRPC/example/caller/callfriendservice.cc",
+  "file": "/home/kuaka/mpRPC/example/caller/callfriendservice.cc"
 },
 {
   "directory": "/home/kuaka/mpRPC/build/example/caller",
-  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/consumer.dir/__/user.pb.cc.o -c /home/kuaka/mpRPC/example/user.pb.cc",
-  "file": "/home/kuaka/mpRPC/example/user.pb.cc"
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/consumer.dir/__/friends.pb.cc.o -c /home/kuaka/mpRPC/example/friends.pb.cc",
+  "file": "/home/kuaka/mpRPC/example/friends.pb.cc"
 }
 ]

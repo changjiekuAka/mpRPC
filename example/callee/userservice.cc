@@ -85,7 +85,10 @@ int main(int argc,char** argv)
     mprpcapplication::Init(argc,argv);   
 
     RpcProvider provider;
-    // provider是一个rpc网络服务类，把UserService对象发布到Rpc节点上去
+    /* 
+        provider是一个rpc网络服务类，把UserService对象发布到Rpc节点上去
+        该对象需要继承于Service，才能提取服务对象描述信息和各方法描述信息，最后注册到映射表
+    */
     provider.NotifyService(new user());
     // 启动一个Rpc服务站点，启动之后，进入阻塞，等待远方Rpc调用
     provider.Run();

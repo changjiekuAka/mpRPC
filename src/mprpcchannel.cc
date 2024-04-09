@@ -60,7 +60,8 @@ void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     if(-1 == clientfd){
         std::cout << "create socket error" <<std::endl;
     }
-
+    
+    // 读取配置文件中服务端得IP地址和端口号
     std::string ip = mprpcapplication::GetInstance().GetConfig().Load("rpcservicesIP");
     uint16_t port = atoi(mprpcapplication::GetInstance().GetConfig().Load("rpcservicesPort").c_str());
     

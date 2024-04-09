@@ -145,59 +145,59 @@ consumer/fast:
 	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/build
 .PHONY : consumer/fast
 
-__/user.pb.o: __/user.pb.cc.o
+__/friends.pb.o: __/friends.pb.cc.o
 
-.PHONY : __/user.pb.o
-
-# target to build an object file
-__/user.pb.cc.o:
-	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/user.pb.cc.o
-.PHONY : __/user.pb.cc.o
-
-__/user.pb.i: __/user.pb.cc.i
-
-.PHONY : __/user.pb.i
-
-# target to preprocess a source file
-__/user.pb.cc.i:
-	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/user.pb.cc.i
-.PHONY : __/user.pb.cc.i
-
-__/user.pb.s: __/user.pb.cc.s
-
-.PHONY : __/user.pb.s
-
-# target to generate assembly for a file
-__/user.pb.cc.s:
-	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/user.pb.cc.s
-.PHONY : __/user.pb.cc.s
-
-calluserservice.o: calluserservice.cc.o
-
-.PHONY : calluserservice.o
+.PHONY : __/friends.pb.o
 
 # target to build an object file
-calluserservice.cc.o:
-	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/calluserservice.cc.o
-.PHONY : calluserservice.cc.o
+__/friends.pb.cc.o:
+	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/friends.pb.cc.o
+.PHONY : __/friends.pb.cc.o
 
-calluserservice.i: calluserservice.cc.i
+__/friends.pb.i: __/friends.pb.cc.i
 
-.PHONY : calluserservice.i
+.PHONY : __/friends.pb.i
 
 # target to preprocess a source file
-calluserservice.cc.i:
-	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/calluserservice.cc.i
-.PHONY : calluserservice.cc.i
+__/friends.pb.cc.i:
+	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/friends.pb.cc.i
+.PHONY : __/friends.pb.cc.i
 
-calluserservice.s: calluserservice.cc.s
+__/friends.pb.s: __/friends.pb.cc.s
 
-.PHONY : calluserservice.s
+.PHONY : __/friends.pb.s
 
 # target to generate assembly for a file
-calluserservice.cc.s:
-	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/calluserservice.cc.s
-.PHONY : calluserservice.cc.s
+__/friends.pb.cc.s:
+	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/friends.pb.cc.s
+.PHONY : __/friends.pb.cc.s
+
+callfriendservice.o: callfriendservice.cc.o
+
+.PHONY : callfriendservice.o
+
+# target to build an object file
+callfriendservice.cc.o:
+	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/callfriendservice.cc.o
+.PHONY : callfriendservice.cc.o
+
+callfriendservice.i: callfriendservice.cc.i
+
+.PHONY : callfriendservice.i
+
+# target to preprocess a source file
+callfriendservice.cc.i:
+	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/callfriendservice.cc.i
+.PHONY : callfriendservice.cc.i
+
+callfriendservice.s: callfriendservice.cc.s
+
+.PHONY : callfriendservice.s
+
+# target to generate assembly for a file
+callfriendservice.cc.s:
+	cd /home/kuaka/mpRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/callfriendservice.cc.s
+.PHONY : callfriendservice.cc.s
 
 # Help Target
 help:
@@ -208,12 +208,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... consumer"
-	@echo "... __/user.pb.o"
-	@echo "... __/user.pb.i"
-	@echo "... __/user.pb.s"
-	@echo "... calluserservice.o"
-	@echo "... calluserservice.i"
-	@echo "... calluserservice.s"
+	@echo "... __/friends.pb.o"
+	@echo "... __/friends.pb.i"
+	@echo "... __/friends.pb.s"
+	@echo "... callfriendservice.o"
+	@echo "... callfriendservice.i"
+	@echo "... callfriendservice.s"
 .PHONY : help
 
 

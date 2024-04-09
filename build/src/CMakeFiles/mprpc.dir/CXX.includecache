@@ -10,6 +10,14 @@
 mprpcconfig.h
 ../src/include/mprpcconfig.h
 
+../src/include/mprpcchannel.h
+google/protobuf/service.h
+-
+google/protobuf/descriptor.h
+-
+google/protobuf/message.h
+-
+
 ../src/include/mprpcconfig.h
 string
 -
@@ -76,6 +84,28 @@ functional
 string
 -
 unordered_map
+-
+
+/home/kuaka/mpRPC/src/mprpcchannel.cc
+mprpcchannel.h
+/home/kuaka/mpRPC/src/mprpcchannel.h
+rpcheader.pb.h
+/home/kuaka/mpRPC/src/rpcheader.pb.h
+mprpcapplication.h
+/home/kuaka/mpRPC/src/mprpcapplication.h
+string
+-
+sys/socket.h
+-
+sys/types.h
+-
+netinet/in.h
+-
+stdlib.h
+-
+arpa/inet.h
+-
+unistd.h
 -
 
 /home/kuaka/mpRPC/src/rpcprovider.cc

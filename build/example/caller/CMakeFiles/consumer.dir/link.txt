@@ -1,1 +1,1 @@
-/usr/bin/g++  -g  -rdynamic CMakeFiles/consumer.dir/calluserservice.cc.o CMakeFiles/consumer.dir/__/user.pb.cc.o  -o ../../../bin/consumer   -L/home/kuaka/mpRPC/lib  -Wl,-rpath,/home/kuaka/mpRPC/lib ../../../lib/libmprpc.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread 
+/usr/bin/g++  -g  -rdynamic CMakeFiles/consumer.dir/callfriendservice.cc.o CMakeFiles/consumer.dir/__/friends.pb.cc.o  -o ../../../bin/consumer   -L/home/kuaka/mpRPC/lib  -Wl,-rpath,/home/kuaka/mpRPC/lib ../../../lib/libmprpc.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread 
