@@ -46,8 +46,13 @@ void RpcProvider::Run()
 
     tcpserver.setThreadNum(4);
 
+
     tcpserver.start();
+    
+    std::cout << "[RpcProvider service start] " << "serviceIP :" << ip << "servicePort" << port << std::endl;
+    
     _eventloop.loop();
+
 }
 
 void RpcProvider::OnConnection(const muduo::net::TcpConnectionPtr& conn)

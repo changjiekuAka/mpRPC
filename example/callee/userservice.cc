@@ -47,6 +47,36 @@ public:
         //执行回调
         done->Run();
     }
+
+    bool Register(std::string user,std::string msg)
+    {
+        std::cout << "============================" << std::endl;
+        std::cout << "user :" << user <<" message : " << msg << std::endl;
+        std::cout << "============================" << std::endl;
+        return true;
+    }
+
+
+    void Register(::google::protobuf::RpcController* controller,
+                       const ::fixbug::RegisterRequest* request,
+                       ::fixbug::RegisterResponse* response,
+                       ::google::protobuf::Closure* done)
+    {
+        std::string user_name = request->user_name();
+        uint32_t age = request->age();
+        std::string user_msg = request->user_msg();
+
+        bool reslut_Register = Register(user_name,user_msg);
+
+        response->set_success(reslut_Register);
+        fixbug::ResultCode *reslut_code = response->mutable_result();
+        reslut_code->set_errcode(0);
+        reslut_code->set_errmsg("777");
+
+        done->Run();
+    }
+
+
 };
 
 int main(int argc,char** argv)

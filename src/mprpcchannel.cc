@@ -42,6 +42,9 @@ void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
 
     }
 
+    /*
+        header_size + header_str + args_str
+    */ 
     std::string send_rpc_str;
     send_rpc_str.insert(0,std::string((char*)&header_size,4));
     send_rpc_str += rpc_header_str;
@@ -61,6 +64,8 @@ void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     std::string ip = mprpcapplication::GetInstance().GetConfig().Load("rpcservicesIP");
     uint16_t port = atoi(mprpcapplication::GetInstance().GetConfig().Load("rpcservicesPort").c_str());
     
+
+    // 采用tcp通信，发送请求报文 
     struct sockaddr_in server;
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
