@@ -3,23 +3,31 @@
 
 src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o
  ../src/include/mprpcapplication.h
+ ../src/include/mprpcchannel.h
  ../src/include/mprpcconfig.h
+ ../src/include/mprpccontroller.h
  /home/kuaka/mpRPC/src/mprpcapplication.cc
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o
  ../src/include/mprpcapplication.h
  ../src/include/mprpcchannel.h
  ../src/include/mprpcconfig.h
+ ../src/include/mprpccontroller.h
  ../src/include/rpcheader.pb.h
  /home/kuaka/mpRPC/src/mprpcchannel.cc
 src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o
  ../src/include/mprpcconfig.h
  /home/kuaka/mpRPC/src/mprpcconfig.cc
+src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o
+ ../src/include/mprpccontroller.h
+ /home/kuaka/mpRPC/src/mprpccontroller.cc
 src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o
  ../src/include/rpcheader.pb.h
  /home/kuaka/mpRPC/src/rpcheader.pb.cc
 src/CMakeFiles/mprpc.dir/rpcprovider.cc.o
  ../src/include/mprpcapplication.h
+ ../src/include/mprpcchannel.h
  ../src/include/mprpcconfig.h
+ ../src/include/mprpccontroller.h
  ../src/include/rpcheader.pb.h
  ../src/include/rpcprovider.h
  /home/kuaka/mpRPC/src/rpcprovider.cc

@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kuaka/mpRPC/src/mprpcapplication.cc" "/home/kuaka/mpRPC/build/src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o"
   "/home/kuaka/mpRPC/src/mprpcchannel.cc" "/home/kuaka/mpRPC/build/src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o"
   "/home/kuaka/mpRPC/src/mprpcconfig.cc" "/home/kuaka/mpRPC/build/src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o"
+  "/home/kuaka/mpRPC/src/mprpccontroller.cc" "/home/kuaka/mpRPC/build/src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o"
   "/home/kuaka/mpRPC/src/rpcheader.pb.cc" "/home/kuaka/mpRPC/build/src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o"
   "/home/kuaka/mpRPC/src/rpcprovider.cc" "/home/kuaka/mpRPC/build/src/CMakeFiles/mprpc.dir/rpcprovider.cc.o"
   )

@@ -7,7 +7,9 @@ example/callee/CMakeFiles/provider.dir/__/friends.pb.cc.o
 example/callee/CMakeFiles/provider.dir/friendservice.cc.o
  ../example/friends.pb.h
  ../src/include/mprpcapplication.h
+ ../src/include/mprpcchannel.h
  ../src/include/mprpcconfig.h
+ ../src/include/mprpccontroller.h
  ../src/include/rpcheader.pb.h
  ../src/include/rpcprovider.h
  /home/kuaka/mpRPC/example/callee/friendservice.cc

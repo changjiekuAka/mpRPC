@@ -1,6 +1,7 @@
 #include "mprpcapplication.h"
 #include "user.pb.h"
-#include "mprpcchannel.h"
+
+
 
 int main(int argc,char** argv)
 {
@@ -12,14 +13,20 @@ int main(int argc,char** argv)
     request.set_pwd("11111");
 
     fixbug::LoginResponse response;
-    stub.Login(nullptr,&request,&response,nullptr);
+    MprpcController controller;
+    stub.Login(&controller,&request,&response,nullptr);
 
-    if(0 == response.result().errcode()){
-        std::cout << "rpc login response success : " << response.success() << std::endl;
+    if(controller.Failed())
+    {
+
     }else{
-        std::cout << "rpc login response error : " << response.result().errmsg() << std::endl;
-    }
 
+        if(0 == response.result().errcode()){
+            std::cout << "rpc login response success : " << response.success() << std::endl;
+        }else{
+            std::cout << "rpc login response error : " << response.result().errmsg() << std::endl;
+        }
+    }
 
     fixbug::RegisterRequest regis_request;
     regis_request.set_user_name("Li si");

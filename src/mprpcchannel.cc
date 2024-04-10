@@ -24,6 +24,8 @@ void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         args_size = args_str.size();
     }else{
         // 序列化失败
+        controller->SetFailed("Serializa args_str failed");
+        return;
     }
     // 定义rpc请求header
     mprpc::RpcHeader rpc_header;
@@ -32,14 +34,15 @@ void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     rpc_header.set_args_size(args_size);
 
     std::string rpc_header_str;
-    // 数据头大小
+    // 数据头大小,以4字节填入send_rpc_str
     uint32_t header_size;
     if(rpc_header.SerializePartialToString(&rpc_header_str)){
         // 序列化成功
         header_size = rpc_header_str.size();
     }else{
         // 序列化失败
-
+        controller->SetFailed("Serialize rpc_header_str failed");
+        return;
     }
 
     /*
@@ -58,7 +61,10 @@ void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
 
     int clientfd = socket(AF_INET,SOCK_STREAM,0);
     if(-1 == clientfd){
-        std::cout << "create socket error" <<std::endl;
+        char errtxt[512];
+        sprintf(errtxt,"create socket error ! errno : %d",errno);
+        controller->SetFailed(errtxt);
+        return;
     }
     
     // 读取配置文件中服务端得IP地址和端口号
@@ -73,30 +79,38 @@ void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     server.sin_addr.s_addr = inet_addr(ip.c_str());
 
     if(-1 == connect(clientfd,(sockaddr*)&server,sizeof(server))){
-        std::cout << "[connect error] errno : " << errno << std::endl;
         close(clientfd);
-        exit(EXIT_FAILURE);
+        char errtxt[512];
+        sprintf(errtxt,"connect server error ! errno : %d",errno);
+        controller->SetFailed(errtxt);
+        return;
     }
 
     if(-1 == send(clientfd,send_rpc_str.c_str(),send_rpc_str.size(),0)){
-        std::cout << "[send error] errno : " << errno << std::endl;
         close(clientfd);
+        char errtxt[512];
+        sprintf(errtxt,"send msg to server error ! errno : %d",errno);
+        controller->SetFailed(errtxt);
         return;
     }
 
     char recv_buf[1024] = {0};
     int recv_size = 0;
     if(-1 == (recv_size = recv(clientfd,recv_buf,1024,0))){
-        std::cout << "[recv error] errno : " << errno << std::endl;
         close(clientfd);
+        char errtxt[512];
+        sprintf(errtxt,"recv msg from server error ! errno : %d",errno);
+        controller->SetFailed(errtxt);
         return;
     }
 
     //std::string response_str(recv_buf,0,recv_size);
     //if(!response->ParseFromString(response_str)){
     if(!response->ParseFromArray(recv_buf,recv_size)){
-        std::cout << "response str parse error" << std::endl;
         close(clientfd);
+         char errtxt[512];
+        sprintf(errtxt,"response str parse error ! errno : %d",errno);
+        controller->SetFailed(errtxt);
         return;
     }
 
