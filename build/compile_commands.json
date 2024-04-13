@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/kuaka/mpRPC/build/src",
+  "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/mprpc.dir/logger.cc.o -c /home/kuaka/mpRPC/src/logger.cc",
+  "file": "/home/kuaka/mpRPC/src/logger.cc"
+},
+{
+  "directory": "/home/kuaka/mpRPC/build/src",
   "command": "/usr/bin/g++   -I/home/kuaka/mpRPC/src/include -I/home/kuaka/mpRPC/example  -g   -o CMakeFiles/mprpc.dir/mprpcapplication.cc.o -c /home/kuaka/mpRPC/src/mprpcapplication.cc",
   "file": "/home/kuaka/mpRPC/src/mprpcapplication.cc"
 },

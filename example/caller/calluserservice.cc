@@ -1,11 +1,9 @@
 #include "mprpcapplication.h"
 #include "user.pb.h"
 
-
-
-int main(int argc,char** argv)
+int main(int argc, char **argv)
 {
-    mprpcapplication::Init(argc,argv);
+    mprpcapplication::Init(argc, argv);
 
     fixbug::UserServiceRpc_Stub stub(new mpRpcChannel());
     fixbug::LoginRequest request;
@@ -14,16 +12,21 @@ int main(int argc,char** argv)
 
     fixbug::LoginResponse response;
     MprpcController controller;
-    stub.Login(&controller,&request,&response,nullptr);
+    stub.Login(&controller, &request, &response, nullptr);
 
-    if(controller.Failed())
+    if (controller.Failed())
+    {
+        std::cout << controller.ErrorText() << std::endl;
+    }
+    else
     {
 
-    }else{
-
-        if(0 == response.result().errcode()){
+        if (0 == response.result().errcode())
+        {
             std::cout << "rpc login response success : " << response.success() << std::endl;
-        }else{
+        }
+        else
+        {
             std::cout << "rpc login response error : " << response.result().errmsg() << std::endl;
         }
     }
@@ -34,12 +37,22 @@ int main(int argc,char** argv)
     regis_request.set_age(18);
 
     fixbug::RegisterResponse regis_response;
+    controller.Reset();
+    stub.Register(&controller, &regis_request, &regis_response, nullptr);
 
-    stub.Register(nullptr,&regis_request,&regis_response,nullptr);
-
-    if(0 == regis_response.result().errcode()){
-        std::cout << "rpc login response success : " << regis_response.success() << std::endl;
-    }else{
-        std::cout << "rpc login response error : " << regis_response.result().errmsg() << std::endl;
+    if (controller.Failed())
+    {
+        std::cout << controller.ErrorText() << std::endl;
+    }
+    else
+    {
+        if (0 == regis_response.result().errcode())
+        {
+            std::cout << "rpc login response success : " << regis_response.success() << std::endl;
+        }
+        else
+        {
+            std::cout << "rpc login response error : " << regis_response.result().errmsg() << std::endl;
+        }
     }
 }
