@@ -19,7 +19,7 @@ public:
         std::unique_lock<std::mutex> lock(m_mutex);
         while(m_queue.empty())
         {
-            m_condvariable.wait(m_mutex);
+            m_condvariable.wait(lock);
         }
         T data = m_queue.front();
         m_queue.pop();

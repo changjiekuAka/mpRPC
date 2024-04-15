@@ -9,6 +9,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
+// 负责Caller方的序列化和发送工作
 void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
                           google::protobuf::RpcController* controller, const google::protobuf::Message* request,
                           google::protobuf::Message* response, google::protobuf::Closure* done)

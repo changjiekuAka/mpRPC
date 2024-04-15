@@ -1,0 +1,2 @@
+[11-26-58][INFO]first log msg
+[11-26-58][INFO]/home/kuaka/mpRPC/example/callee/friendservice.cc-main-46

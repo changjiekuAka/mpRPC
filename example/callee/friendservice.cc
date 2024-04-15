@@ -1,6 +1,7 @@
 #include "friends.pb.h"
 #include "mprpcapplication.h"
 #include "rpcprovider.h"
+#include "logger.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -41,6 +42,9 @@ class friends : public fixbug::UserServiceRpc
 
 int main(int argc,char** argv)
 {
+    LOG_INFO("first log msg");
+    LOG_INFO("%s-%s-%d",__FILE__,__FUNCTION__,__LINE__);
+
     //user tmp;
     mprpcapplication::Init(argc,argv);   
 

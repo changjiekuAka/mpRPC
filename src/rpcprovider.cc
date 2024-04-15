@@ -1,5 +1,6 @@
 #include "rpcprovider.h"
 #include "mprpcapplication.h"
+#include "logger.h"
 
 using namespace std::placeholders;
 
@@ -15,13 +16,16 @@ void RpcProvider::NotifyService(::google::protobuf::Service* service)
     // 从描述信息中拿到服务对象中方法的数量
     int method_count = pserviceDesc->method_count();
 
+    LOG_INFO("Log in service name : %s",service_name);
     std::cout << "service name :" << service_name << std::endl;
+
     // 登记映射关系表
     for(int i = 0;i < method_count;++i)
     {
         const google::protobuf::MethodDescriptor *pmethodDesc = pserviceDesc->method(i);
         std::string method_name = pmethodDesc->name();
         
+        LOG_INFO("Log in method name : %s",method_name);
         std::cout << "method name : " << method_name << std::endl;
         
         service_info.m_methodMap.insert({ method_name , pmethodDesc});
@@ -49,7 +53,8 @@ void RpcProvider::Run()
 
     tcpserver.start();
     
-    std::cout << "[RpcProvider service start] " << "serviceIP :" << ip << "servicePort" << port << std::endl;
+    LOG_INFO("[RpcProvider service start] serviceIP : %s servicePort : %d",ip,port);
+    std::cout << "[RpcProvider service start] " << "serviceIP :" << ip << "servicePort :" << port << std::endl;
     
     _eventloop.loop();
 
@@ -91,6 +96,7 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
     else
     {
         // 数据头反序列化失败
+        LOG_ERROR("%s-%s-%d : rpc_header Parse false",__FILE__,__FUNCTION__,__LINE__);
         std::cout << "rpc_header Parse false" << std::endl;
         return; 
     }
@@ -108,12 +114,14 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
     // 往映射表中查找注册的服务，和服务方法
     auto serviceinfo_it = m_serviceMap.find(service_name);
     if(serviceinfo_it == m_serviceMap.end()){
+        LOG_ERROR("%s-%s-%d : service name : %s no find!",__FILE__,__FUNCTION__,__LINE__,service_name);
         std::cout << "[error] service name :" << service_name << " no find !" << std::endl;
         return;
     }
 
     auto method_it = serviceinfo_it->second.m_methodMap.find(method_name);
     if(method_it == serviceinfo_it->second.m_methodMap.end()){
+        LOG_ERROR("%s-%s-%d : method name : %s no find!",__FILE__,__FUNCTION__,__LINE__,method_name);
         std::cout << "[error] method name :" << method_name <<" no find !" << std::endl;
         return;
     }

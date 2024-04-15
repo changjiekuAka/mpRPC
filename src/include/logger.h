@@ -33,8 +33,8 @@ private:
         logger.SetLogLevel(INFO); \
         char log_txt[1024]; \
         snprintf(log_txt,1024,logmsgformat,##__VA_ARGS__); \
-        logger.log(log_txt); \
-    } while({0});   
+        logger.Log(log_txt); \
+    } while(0)   
     
 #define LOG_ERROR(logmsgformat, ...) \
     do \
@@ -43,6 +43,6 @@ private:
         logger.SetLogLevel(ERROR); \
         char log_txt[1024]; \
         snprintf(log_txt,1024,logmsgformat,##__VA_ARGS__); \
-        logger.log(log_txt); \
-    } while({0});   
+        logger.Log(log_txt); \
+    } while(0)   
     

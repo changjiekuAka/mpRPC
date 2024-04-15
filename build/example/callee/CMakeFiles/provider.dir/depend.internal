@@ -6,6 +6,8 @@ example/callee/CMakeFiles/provider.dir/__/friends.pb.cc.o
  /home/kuaka/mpRPC/example/friends.pb.h
 example/callee/CMakeFiles/provider.dir/friendservice.cc.o
  ../example/friends.pb.h
+ ../src/include/lockqueue.h
+ ../src/include/logger.h
  ../src/include/mprpcapplication.h
  ../src/include/mprpcchannel.h
  ../src/include/mprpcconfig.h

@@ -5,6 +5,8 @@ example/callee/CMakeFiles/provider.dir/__/friends.pb.cc.o: ../example/friends.pb
 example/callee/CMakeFiles/provider.dir/__/friends.pb.cc.o: ../example/friends.pb.h
 
 example/callee/CMakeFiles/provider.dir/friendservice.cc.o: ../example/friends.pb.h
+example/callee/CMakeFiles/provider.dir/friendservice.cc.o: ../src/include/lockqueue.h
+example/callee/CMakeFiles/provider.dir/friendservice.cc.o: ../src/include/logger.h
 example/callee/CMakeFiles/provider.dir/friendservice.cc.o: ../src/include/mprpcapplication.h
 example/callee/CMakeFiles/provider.dir/friendservice.cc.o: ../src/include/mprpcchannel.h
 example/callee/CMakeFiles/provider.dir/friendservice.cc.o: ../src/include/mprpcconfig.h
