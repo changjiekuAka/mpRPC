@@ -37,3 +37,6 @@ src/CMakeFiles/mprpc.dir/rpcprovider.cc.o
  ../src/include/rpcheader.pb.h
  ../src/include/rpcprovider.h
  /home/kuaka/mpRPC/src/rpcprovider.cc
+src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o
+ ../src/include/zookeeperutil.h
+ /home/kuaka/mpRPC/src/zookeeperutil.cc
