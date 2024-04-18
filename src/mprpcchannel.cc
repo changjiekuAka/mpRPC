@@ -1,6 +1,7 @@
 #include "mprpcchannel.h"
 #include "rpcheader.pb.h"
 #include "mprpcapplication.h"
+#include "zookeeperutil.h"
 #include <string>
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -69,9 +70,25 @@ void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     }
     
     // 读取配置文件中服务端得IP地址和端口号
-    std::string ip = mprpcapplication::GetInstance().GetConfig().Load("rpcservicesIP");
-    uint16_t port = atoi(mprpcapplication::GetInstance().GetConfig().Load("rpcservicesPort").c_str());
+    //std::string ip = mprpcapplication::GetInstance().GetConfig().Load("rpcservicesIP");
+    //uint16_t port = atoi(mprpcapplication::GetInstance().GetConfig().Load("rpcservicesPort").c_str());
     
+    // 读取zk服务端中注册好的方法服务，也就是获取方法所属的IP和PORT
+    zkClient zkcli;
+    zkcli.Start();
+    std::string method_path = "/" + service_name + "/" + method_name;
+    std::string host_data = zkcli.GetData(method_path.c_str());
+    if(host_data == ""){
+        controller->SetFailed("method path data is null");
+        return;
+    }
+    size_t index = host_data.find(":");
+    if(-1 == index){
+        controller->SetFailed("method path : " + method_name +" is invalid");
+        return;
+    }
+    std::string ip = host_data.substr(0,index);
+    uint16_t port = atoi(host_data.substr(index + 1,host_data.size() - index).c_str());
 
     // 采用tcp通信，发送请求报文 
     struct sockaddr_in server;

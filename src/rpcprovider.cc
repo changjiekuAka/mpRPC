@@ -1,6 +1,7 @@
 #include "rpcprovider.h"
 #include "mprpcapplication.h"
 #include "logger.h"
+#include "zookeeperutil.h"
 
 using namespace std::placeholders;
 
@@ -34,7 +35,11 @@ void RpcProvider::NotifyService(::google::protobuf::Service* service)
 
     m_serviceMap.insert({service_name , service_info});
 }
-// 为provider节点建立网络服务，注册事件回调
+/* 
+    为provider节点建立网络服务，注册事件回调，将Notify中注册好的服务添加到zk服务器。
+    构建临时性节点，超时时间为30s，心跳消息发送间隔：1/3 * 超时时间
+*/
+
 void RpcProvider::Run()
 {
     std::string ip = mprpcapplication::GetInstance().GetConfig().Load("rpcservicesIP");
@@ -49,6 +54,24 @@ void RpcProvider::Run()
     tcpserver.setMessageCallback(std::bind(&RpcProvider::OnMessage,this,_1,_2,_3));
 
     tcpserver.setThreadNum(4);
+
+    // 注册服务到zk服务段中
+    zkClient zkCli;
+    zkCli.Start();
+
+    for(auto &sp : m_serviceMap){
+        // service_name为永久性节点，method_name为临时性节点
+        std::string service_path = "/" + sp.first;
+        zkCli.Create(service_path.c_str(),nullptr,0);
+        
+        for(auto &mp : sp.second.m_methodMap){
+            std::string method_str = service_path + "/" + mp.first;
+            char method_path_data[128] = {0};
+            sprintf(method_path_data,"%s:%d",ip.c_str(),port);
+            zkCli.Create(method_str.c_str(),method_path_data,strlen(method_path_data),ZOO_EPHEMERAL);
+        }
+    }
+
 
 
     tcpserver.start();

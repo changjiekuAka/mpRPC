@@ -31,7 +31,7 @@ void zkClient::Start()
     std::string zkIP = mprpcapplication::GetInstance().GetConfig().Load("ZookeeperIP");
     std::string zkPort = mprpcapplication::GetInstance().GetConfig().Load("ZookeeperPort");
     std::string conn_str = zkIP + ":" + zkPort;
-
+    // 创建句柄连接zk服务器
     m_zhandle = zookeeper_init(conn_str.c_str(),global_watcher,30000,nullptr,nullptr,0);
     if(m_zhandle == nullptr){
         std::cout << "zookeeper_init error" << std::endl;
@@ -74,6 +74,7 @@ std::string zkClient::GetData(const char *path)
     int flag = zoo_get(m_zhandle,path,0,buffer,&bufferlen,nullptr);
     if(flag != ZOK){
         std::cout << "get znode error... path:" << path << std::endl;
+        return "";
     }else{
         return buffer;
     }
