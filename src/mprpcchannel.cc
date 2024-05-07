@@ -10,7 +10,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-// 负责Caller方的序列化和发送工作
+// 负责Caller方的序列化和发送工作,所有通过stub代理对象调用的rpc方法，都会走到这里
 void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
                           google::protobuf::RpcController* controller, const google::protobuf::Message* request,
                           google::protobuf::Message* response, google::protobuf::Closure* done)
@@ -21,6 +21,7 @@ void mpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
 
     uint32_t args_size;
     std::string args_str;
+    // 将调用方法的参数序列化
     if(request->SerializeToString(&args_str)){
         // 序列化成功
         args_size = args_str.size();

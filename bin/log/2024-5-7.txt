@@ -1,0 +1,9 @@
+[11-26-49][INFO]first log msg
+[11-26-49][INFO]/home/kuaka/mpRPC/example/callee/friendservice.cc-main-46
+[11-26-49][INFO]Log in service name : XåS
+[11-26-49][INFO]Log in method name : ¸åS
+[11-29-55][INFO]first log msg
+[11-29-55][INFO]/home/kuaka/mpRPC/example/callee/friendservice.cc-main-46
+[11-29-55][INFO]Log in service name : X%–
+[11-29-55][INFO]Log in method name : ¸%–
+[11-29-55][INFO][RpcProvider service start] serviceIP : ˆö• servicePort : 8080
